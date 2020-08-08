@@ -10,10 +10,10 @@ class ReponseActionObserver
 {
     public function updated(Reponse $model)
     {
-        $data  = ['action' => 'updated', 'model_name' => 'Reponse'];
-        $users = \App\Models\User::whereHas('roles', function ($q) {
-            return $q->where('title', 'Admin');
-        })->get();
-        Notification::send($users, new DataChangeEmailNotification($data));
+        // $data  = ['action' => 'updated', 'model_name' => 'Reponse'];
+        // $users = \App\Models\User::whereHas('roles', function ($q) {
+        //     return $q->where('title', 'Admin');
+        // })->get();
+        // Notification::send($users, new DataChangeEmailNotification($data));
     }
 }

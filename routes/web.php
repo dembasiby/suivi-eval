@@ -68,6 +68,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Questionnaires
     Route::delete('questionnaires/destroy', 'QuestionnairesController@massDestroy')->name('questionnaires.massDestroy');
+	Route::get('questionnaires/reponses/{questionnaire}/create', 'QuestionnairesController@createReponses')
+		->name('questionnaires.createReponses');
+	Route::get('questionnaires/reponses/{questionnaire}/edit', 'QuestionnairesController@editReponses')
+		->name('questionnaires.editReponses');
+	Route::post('questionnaires/reponses/{questionnaire}', 'QuestionnairesController@storeReponses')
+		->name('questionnaires.storeReponses');
+	Route::put('questionnaires/reponses/{questionnaire}/update', 'QuestionnairesController@updateReponses')
+		->name('questionnaires.updateReponses');
     Route::resource('questionnaires', 'QuestionnairesController');
 
     // Reponses

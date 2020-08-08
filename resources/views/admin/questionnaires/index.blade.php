@@ -64,6 +64,28 @@
                                 {{ $questionnaire->organisation->sigle ?? '' }}
                             </td>
                             <td>
+								@can('question_create')
+                                <a class="btn btn-xs btn-primary" href="{{ route('admin.questionnaires.createReponses', $questionnaire->id) }}">
+                                    Remplir questionnaire
+                                </a>
+                                @if(count($questionnaire->reponses) > 0)
+                                <a class="btn btn-xs btn-primary" href="{{ route('admin.questionnaires.editReponses', $questionnaire->id) }}">
+                                    Editer reponses
+                                </a>
+                                 @endif
+								 @endcan
+                                 @if(count($questionnaire->reponses) > 0)
+ 								@can('questionnaire_control')
+                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.questionnaires.show', $questionnaire->id) }}">
+                                     Controller questionnaire
+                                 </a>
+ 								 @endcan
+ 								@can('questionnaire_validate')
+                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.questionnaires.show', $questionnaire->id) }}">
+                                     Valider questionnaire
+                                 </a>
+ 								 @endcan
+                                 @endif
                                 @can('questionnaire_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.questionnaires.show', $questionnaire->id) }}">
                                         {{ trans('global.view') }}

@@ -33,17 +33,17 @@ class StoreQuestionnaireRequest extends FormRequest
                 'string',
                 'required',
             ],
-            'questions.*'     => [
-                'integer',
-            ],
-            'questions'       => [
-                'required',
-                'array',
-            ],
-            'organisation_id' => [
-                'required',
-                'integer',
-            ],
+            // 'questions.*'     => [
+           //      'integer',
+           //  ],
+           //  'questions'       => [
+           //      'required',
+           //      'array',
+           //  ],
+            // 'organisation_id' => [
+     //            'required',
+     //            'integer',
+     //        ],
         ];
     }
 }

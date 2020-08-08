@@ -5,6 +5,11 @@
     <div class="card-header">
         {{ trans('global.edit') }} {{ trans('cruds.questionnaire.title_singular') }}
     </div>
+    <div class="form-group">
+        <a class="btn btn-default" href="{{ route('admin.questionnaires.index') }}">
+            {{ trans('global.back_to_list') }}
+        </a>
+    </div>
 
     <div class="card-body">
         <form method="POST" action="{{ route("admin.questionnaires.update", [$questionnaire->id]) }}" enctype="multipart/form-data">
@@ -58,13 +63,10 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.questionnaire.fields.question_helper') }}</span>
             </div>
+			
             <div class="form-group">
-                <label class="required" for="organisation_id">{{ trans('cruds.questionnaire.fields.organisation') }}</label>
-                <select class="form-control select2 {{ $errors->has('organisation') ? 'is-invalid' : '' }}" name="organisation_id" id="organisation_id" required>
-                    @foreach($organisations as $id => $organisation)
-                        <option value="{{ $id }}" {{ ($questionnaire->organisation ? $questionnaire->organisation->id : old('organisation_id')) == $id ? 'selected' : '' }}>{{ $organisation }}</option>
-                    @endforeach
-                </select>
+                <label class="required" for="organisation">Organisation</label>
+                <input class="form-control {{ $errors->has('organisation_id') ? 'is-invalid' : '' }}" type="text" name="organisation" id="trimestre" value="{{ old('organisation_id', $questionnaire->organisation->nom) }}" disabled required>
                 @if($errors->has('organisation'))
                     <div class="invalid-feedback">
                         {{ $errors->first('organisation') }}
@@ -72,6 +74,9 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.questionnaire.fields.organisation_helper') }}</span>
             </div>
+			
+			
+			
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

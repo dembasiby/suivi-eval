@@ -19,18 +19,18 @@ class StoreReponseRequest extends FormRequest
     public function rules()
     {
         return [
-            'description'      => [
-                'string',
-                'required',
-            ],
-            'question_id'      => [
-                'required',
-                'integer',
-            ],
-            'questionnaire_id' => [
-                'required',
-                'integer',
-            ],
+             // 'description'      => [
+//                  'string',
+//                  'required',
+             ],
+            // 'question_id'      => [
+//                 'required',
+//                 'integer',
+//             ],
+//             'questionnaire_id' => [
+//                 'required',
+//                 'integer',
+//             ],
         ];
     }
 }

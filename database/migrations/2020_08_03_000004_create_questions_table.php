@@ -12,6 +12,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('description');
             $table->string('recurrence')->default('continue');
+			$table->json('options')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

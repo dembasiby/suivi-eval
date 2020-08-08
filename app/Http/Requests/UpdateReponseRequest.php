@@ -20,17 +20,17 @@ class UpdateReponseRequest extends FormRequest
     {
         return [
             'description'      => [
-                'string',
+                'array',
                 'required',
             ],
-            'question_id'      => [
-                'required',
-                'integer',
-            ],
-            'questionnaire_id' => [
-                'required',
-                'integer',
-            ],
+            // 'question_id'      => [
+            //     'required',
+            //     'integer',
+            // ],
+            // 'questionnaire_id' => [
+            //     'required',
+            //     'integer',
+            // ],
         ];
     }
 }

@@ -35,6 +35,11 @@ class Organisation extends Model
     {
         return $this->belongsToMany(Indicateur::class);
     }
+	
+	public function questionnaires()
+	{
+		return $this->hasMany(Questionnaire::class);
+	}
 
     public function reponses()
     {
@@ -43,6 +48,6 @@ class Organisation extends Model
 	
 	public function teams()
 	{
-		$this->belongsToMany(Team::class)->withTimeStamps();
+		return $this->belongsToMany(Team::class)->withTimeStamps();
 	}
 }

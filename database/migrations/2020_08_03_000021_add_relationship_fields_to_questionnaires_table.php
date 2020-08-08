@@ -11,8 +11,8 @@ class AddRelationshipFieldsToQuestionnairesTable extends Migration
         Schema::table('questionnaires', function (Blueprint $table) {
             $table->unsignedInteger('organisation_id');
             $table->foreign('organisation_id', 'organisation_fk_1931697')->references('id')->on('organisations');
-            $table->unsignedInteger('team_id')->nullable();
-            $table->foreign('team_id', 'team_fk_1931698')->references('id')->on('teams');
+            // $table->unsignedInteger('team_id')->nullable();
+ //            $table->foreign('team_id', 'team_fk_1931698')->references('id')->on('teams');
         });
     }
 }
