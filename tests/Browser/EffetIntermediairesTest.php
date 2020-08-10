@@ -5,16 +5,17 @@ namespace Tests\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
+use App\Models\User;
 
 class EffetIntermediairesTest extends DuskTestCase
 {
     public function testIndex()
     {
-        $admin = App\Models\User::find(1);
+        $admin = User::find(1);
         $this->browse(function (Browser $browser) use ($admin) {
             $browser->loginAs($admin);
-            $browser->visit(route('admin.effetintermediaires.index'));
-            $browser->assertRouteIs('admin.effetintermediaires.index');
+            $browser->visit(route('admin.effet-intermediaires.index'));
+            $browser->assertRouteIs('admin.effet-intermediaires.index');
         });
     }
 }
