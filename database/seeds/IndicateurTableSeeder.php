@@ -45,6 +45,12 @@ class IndicateurTableSeeder extends Seeder
                 "Type d'acteurs cibles",
                 "Nombre cible",
                 "Nombre ayant recu le document"
+            ],
+            'sub_options' => [
+                'Acteurs et parties prenantes nationaux de la LBC/FT',
+                'Autorités nationales impliquées dans la LBC/FT',
+                'Autorités au niveau supranational (communautaires, internationales)',
+                'Partenaires au développement'
             ]
         ]);
 
@@ -251,6 +257,11 @@ class IndicateurTableSeeder extends Seeder
                 "Type d’entités",
                 "Nombre de mécanismes d’identification des bénéficiaires effectifs",
                 "Date de mise en place des mécanismes"
+            ],
+            'sub_options' => [
+                'PM',
+                'CJ',
+                'Autres'
             ]
         ]);
 

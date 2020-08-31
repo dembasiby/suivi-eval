@@ -33,10 +33,11 @@ class Question extends Model
         'updated_at',
         'deleted_at',
         'team_id',
-        'options'
+        'options',
+        'sub_options'
     ];
 
-    protected $casts = ['options' => 'array'];
+    protected $casts = ['options' => 'array', 'sub_options' => 'array'];
 
     protected function serializeDate(DateTimeInterface $date)
     {
