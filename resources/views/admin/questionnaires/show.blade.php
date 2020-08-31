@@ -69,7 +69,26 @@
 										  @endforeach
 								 		</tr>
 										 	</thead>
-										 	<tbody>	
+										 	<tbody>
+                                                @if($questionnaire->questions[$i]->sub_options != null)
+                                                    @foreach($questionnaire->questions[$i]->sub_options as $sub_option)
+                                                    <tr>
+                                                        @for ($j = 0; $j < count($questionnaire->questions[$i]->options); $j++)
+                                                            @if ($j == 0)
+                                                                <td> <input class="form-control" type="text" name="reponses[{{ $i }}][description][{{ $questionnaire->questions[$i]->options[$j] }}]" value="{{ $sub_option }}"></td>
+                                                            @else
+                                                                @if (Str::startsWith($questionnaire->questions[$i]->options[$j], 'Nombre'))
+                                                                <td> <input class="form-control" type="number" name="reponses[{{ $i }}][description][{{ $questionnaire->questions[$i]->options[$j] }}]" value="{{ old('reponses['.$i.']description', '') }}" id="some_name"> </td>													
+                                                                @elseif (Str::startsWith($questionnaire->questions[$i]->options[$j], 'Date'))
+                                                                <td><input class="form-control" type="date" name="reponses[{{ $i }}][description][{{ $questionnaire->questions[$i]->options[$j] }}]" value="{{ old('reponses['.$i.'][description]'. $questionnaire->questions[$i]->options[$j] ) }}" id=""></td>
+                                                                @else
+                                                                <td> <input class="form-control" type="text" name="reponses[{{ $i }}][description][{{$questionnaire->questions[$i]->options[$j]}}]" value="{{ old('reponses['.$i.'][description]'. $questionnaire->questions[$i]->options[$j] ) }}" id="some_name"> </td>
+                                                                @endif
+                                                            @endif
+                                                        @endfor
+                                                    </tr>
+                                                    @endforeach
+                                                @else	
 										 		<tr>
 												
 												@foreach($questionnaire->questions[$i]->options as $option)
@@ -82,7 +101,7 @@
 													@endif
 												@endforeach
 										 		</tr>
-												
+												@endif
 										 	</tbody>
 </table>
 										 @elseif( ($questionnaire->questions[$i]->type_question)->type == 'radio')

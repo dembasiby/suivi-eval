@@ -143,6 +143,8 @@ class QuestionnairesController extends Controller
         // Filter les donnees et enlever toute reponse null
         $donnees = $this->filterForm($data);
 
+        dd($donnees);
+
         // Enregistrer chaque reponse dans la base de donnees
         foreach ($donnees as $key => $value) {
             $questionnaire->reponses()->create($value['reponses'][$key]);
@@ -290,6 +292,7 @@ class QuestionnairesController extends Controller
                 'reponses.' . $i . '.question_id' => 'required',
                 'reponses.' . $i . '.description' => 'required_unless:reponses.' . $prev . '.description,non',
                 'reponses.' . $i . '.description.*' => 'required_unless:reponses.' . $prev . '.description,non',
+                'reponses.' . $i . 'description.*.*' => 'required'
             ]);
         }
 
