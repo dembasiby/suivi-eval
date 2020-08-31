@@ -10,6 +10,7 @@ use App\Models\Extrant;
 use App\Models\Indicateur;
 use App\Models\Organisation;
 use App\Models\ProblemeCentral;
+use App\Models\Team;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,7 +36,9 @@ class IndicateursController extends Controller
 
         $organisations = Organisation::all()->pluck('sigle', 'id');
 
-        return view('admin.indicateurs.create', compact('probleme_centrals', 'extrants', 'organisations'));
+        $teams = Team::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        return view('admin.indicateurs.create', compact('probleme_centrals', 'extrants', 'organisations', 'teams'));
     }
 
     public function store(StoreIndicateurRequest $request)
@@ -54,11 +57,12 @@ class IndicateursController extends Controller
 
         $extrants = Extrant::all()->pluck('description', 'id')->prepend(trans('global.pleaseSelect'), '');
 
+        $teams = Team::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
         $organisations = Organisation::all()->pluck('sigle', 'id');
 
         $indicateur->load('probleme_central', 'extrant', 'organisations', 'team');
 
-        return view('admin.indicateurs.edit', compact('probleme_centrals', 'extrants', 'organisations', 'indicateur'));
+        return view('admin.indicateurs.edit', compact('probleme_centrals', 'extrants', 'organisations', 'indicateur', 'teams'));
     }
 
     public function update(UpdateIndicateurRequest $request, Indicateur $indicateur)

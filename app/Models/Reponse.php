@@ -44,6 +44,33 @@ class Reponse extends Model
         Reponse::observe(new \App\Observers\ReponseActionObserver);
     }
 
+    public function setDescriptionAttributes($value)
+    {
+        $description = [];
+
+        foreach ($description as $ar_item) {
+            if (gettype($ar_item) == object) {
+                $has_null = [];
+
+                foreach ($ar_item as $key => $value) {
+                    if (is_null($value)) {
+                        $has_null[] = $value;
+                    }
+                }
+
+                if (count($has_null) == 0) {
+                    $description[] = $ar_item;
+                }
+            } else {
+                if (!is_null($ar_item)) {
+                    $description[] = $ar_item;
+                }
+            }
+        }
+
+        $this->attributes['description'] = json_encode($description);
+    }
+
     public function question()
     {
         return $this->belongsTo(Question::class, 'question_id');

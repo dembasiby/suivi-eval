@@ -13,6 +13,7 @@ class CreateQuestionnairesTable extends Migration
             $table->string('description');
             $table->integer('annee');
             $table->string('trimestre');
+            $table->integer('statut')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });

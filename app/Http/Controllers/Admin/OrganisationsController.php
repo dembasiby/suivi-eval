@@ -7,6 +7,7 @@ use App\Http\Requests\MassDestroyOrganisationRequest;
 use App\Http\Requests\StoreOrganisationRequest;
 use App\Http\Requests\UpdateOrganisationRequest;
 use App\Models\Organisation;
+use App\Models\Team;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +27,8 @@ class OrganisationsController extends Controller
     {
         abort_if(Gate::denies('organisation_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.organisations.create');
+        $teams = Team::all()->pluck('name', 'id');
+        return view('admin.organisations.create', compact('teams'));
     }
 
     public function store(StoreOrganisationRequest $request)
@@ -40,7 +42,9 @@ class OrganisationsController extends Controller
     {
         abort_if(Gate::denies('organisation_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.organisations.edit', compact('organisation'));
+        $teams = Team::all()->pluck('name', 'id');
+
+        return view('admin.organisations.edit', compact('organisation', 'teams'));
     }
 
     public function update(UpdateOrganisationRequest $request, Organisation $organisation)
@@ -54,6 +58,7 @@ class OrganisationsController extends Controller
     {
         abort_if(Gate::denies('organisation_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        $organisation->load('teams');
         return view('admin.organisations.show', compact('organisation'));
     }
 

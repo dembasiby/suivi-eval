@@ -59,4 +59,9 @@ class Indicateur extends Model
     {
         return $this->belongsTo(Team::class, 'team_id');
     }
+
+    public function reponses()
+    {
+        return $this->hasManyThrough(Reponse::class, Question::class);
+    }
 }

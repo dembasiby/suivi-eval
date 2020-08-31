@@ -35,19 +35,19 @@ class Organisation extends Model
     {
         return $this->belongsToMany(Indicateur::class);
     }
-	
-	public function questionnaires()
-	{
-		return $this->hasMany(Questionnaire::class);
-	}
+
+    public function questionnaires()
+    {
+        return $this->hasMany(Questionnaire::class);
+    }
 
     public function reponses()
     {
         return $this->hasManyThrough(Reponse::class, Questionnaire::class);
     }
-	
-	public function teams()
-	{
-		return $this->belongsToMany(Team::class)->withTimeStamps();
-	}
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class)->withTimestamps();
+    }
 }

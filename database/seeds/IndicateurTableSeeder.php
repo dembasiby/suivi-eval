@@ -20,7 +20,7 @@ class IndicateurTableSeeder extends Seeder
         $radio = TypeQuestion::create(['type' => 'radio']); // <input type="radio"> 4
         $date = TypeQuestion::create(['type' => 'date']); // <input type="date"> 5
         $textarea = TypeQuestion::create(['type' => 'textarea']); // <textarea></textarea> 6
-         $obj = TypeQuestion::create(['type' => 'object']); // tableau 7
+        $obj = TypeQuestion::create(['type' => 'object']); // tableau 7
 
 
         $ind1 = Indicateur::create([
@@ -41,11 +41,11 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'A l’aide du tableau ci-aprés, veuillez indiquer le nombre d’acteurs, de parties prenantes et de partenaires ciblés par la communication du document de stratégie LBC/FT et ayant effectivement reçu le document au plus tard en 2020',
             'indicateur_id' => $ind2->id,
             'type_question_id' => 7,
-			'options' => [
-				"Type d'acteurs cibles",
-				"Nombre cible",
-				"Nombre ayant recu le document"
-			]			
+            'options' => [
+                "Type d'acteurs cibles",
+                "Nombre cible",
+                "Nombre ayant recu le document"
+            ]
         ]);
 
         // Indicateur 3
@@ -86,7 +86,7 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'Si- oui, veuillez préciser à l’aide du tableau, le nombre de sessions prévues et le nombre de sessions réalisées pour chaque année',
             'indicateur_id' => $ind4->id,
             'type_question_id' => 7,
-			'options' => ['Période', 'Nombre de sessions prévues', 'Nombre de sessions realisées']
+            'options' => ['Période', 'Nombre de sessions prévues', 'Nombre de sessions realisées']
         ]);
 
         $ind5 = Indicateur::create([
@@ -100,7 +100,7 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'Si- oui, veuillez préciser à l’aide du tableau, le nombre de cibles prévues et le nombre de cibles touchées pour chaque année',
             'indicateur_id' => $ind5->id,
             'type_question_id' => 7,
-			'options' => ['Période', 'Nombre de cibles prévues', 'Nombre de cibles touchées']
+            'options' => ['Période', 'Nombre de cibles prévues', 'Nombre de cibles touchées']
         ]);
 
 
@@ -139,12 +139,12 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'Si oui, veuillez citer à l’aide du tableau ci-après, le nombre total d’actions de plaidoyer menées sur la période, le nombre total d’autorités ciblées et d’autorités effectivement touchées par le plaidoyer?',
             'indicateur_id' => $ind6->id,
             'type_question_id' => 7,
-			'options' => [
-				'Période', 
-				"Nombre total d'action de plaidoyers", 
-				"Nombre total d'autorités ciblées",
-				"Nombre total d'autorités touchées"
-			]
+            'options' => [
+                'Période',
+                "Nombre total d'action de plaidoyers",
+                "Nombre total d'autorités ciblées",
+                "Nombre total d'autorités touchées"
+            ]
         ]);
 
         $ind7 = Indicateur::create([
@@ -164,11 +164,11 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'Si oui, veuillez citer à l’aide du tableau ci-après, le nombre de textes d’application de la loi 2018-03 effectivement pris par période',
             'indicateur_id' => $ind7->id,
             'type_question_id' => 7,
-			'options' => [
-				"Période",
-				"Nombre total de textes pris",
-				"Type de textes d’application"
-			]
+            'options' => [
+                "Période",
+                "Nombre total de textes pris",
+                "Type de textes d’application"
+            ]
         ]);
 
         $ind8 = Indicateur::create([
@@ -182,11 +182,11 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'Veuillez préciser à l’aide du tableau le nombre de revue de conventions internationales pertinentes à ratifier et à mettre en œuvre de manière complète en indiquant la période',
             'indicateur_id' => $ind8->id,
             'type_question_id' => 7,
-			'options' => [
-				"Période",
-				"Nombre de revues de conventions pertinentes",
-				"Délai de réalisation de la revue par rapport à la convention pertinente ciblée"			
-			]
+            'options' => [
+                "Période",
+                "Nombre de revues de conventions pertinentes",
+                "Délai de réalisation de la revue par rapport à la convention pertinente ciblée"
+            ]
         ]);
 
         $ind9 = Indicateur::create([
@@ -200,22 +200,22 @@ class IndicateurTableSeeder extends Seeder
             'description' => 'Veuillez préciser à l’aide du tableau le nombre de conventions internationales pertinentes à ratifier et effectivement ratifiées en indiquant la période',
             'indicateur_id' => $ind9->id,
             'type_question_id' => 7,
-			'options' => [
-				"Période",
-				"Nombre de conventions internationales pertinentes à ratifier",
-				"Nombre de conventions internationales pertinentes effectivement ratifiée"		
-			]			
+            'options' => [
+                "Période",
+                "Nombre de conventions internationales pertinentes à ratifier",
+                "Nombre de conventions internationales pertinentes effectivement ratifiée"
+            ]
         ]);
 
         Question::create([
             'description' => 'Veuillez lister à l’aide du tableau ci-après les conventions effectivement ratifiées  et leur  implication sur le droit positif',
             'indicateur_id' => $ind9->id,
             'type_question_id' => 7,
-			'options' => [
-				"Conventions ratifiées",
-				"Date de ratification",
-				"Implication sur le droit positif"
-			]
+            'options' => [
+                "Conventions ratifiées",
+                "Date de ratification",
+                "Implication sur le droit positif"
+            ]
         ]);
 
         $ind10 = Indicateur::create([
@@ -229,11 +229,11 @@ class IndicateurTableSeeder extends Seeder
             'description' => "Veuillez préciser à l'aide du tableau le nombre de textes pris pour encadrer les constructions juridiques ",
             'indicateur_id' => $ind10->id,
             'type_question_id' => 7,
-			'options' => [
-				"Période",
-				"Nombre de textes pris",
-				"Nature des textes pris"
-			]
+            'options' => [
+                "Période",
+                "Nombre de textes pris",
+                "Nature des textes pris"
+            ]
         ]);
 
         $ind11 = Indicateur::create([

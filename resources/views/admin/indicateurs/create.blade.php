@@ -5,7 +5,12 @@
     <div class="card-header">
         {{ trans('global.create') }} {{ trans('cruds.indicateur.title_singular') }}
     </div>
-
+            <div class="form-group">
+                <a class="btn btn-default" href="{{ route('admin.indicateurs.index') }}">
+                    {{ trans('global.back_to_list') }}
+                </a>
+            </div>
+ 
     <div class="card-body">
         <form method="POST" action="{{ route("admin.indicateurs.store") }}" enctype="multipart/form-data">
             @csrf
@@ -74,6 +79,21 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.indicateur.fields.organisation_helper') }}</span>
+            </div>
+
+            <div class="form-group">
+               <label class="required" for="team">Equipe</label> 
+               <select class="form-control select2 {{ $errors->has('team') ? 'is-invalid' : '' }}" name="team" id="team" required>
+                   @foreach($teams as $id => $team)
+                       <option value="{{ $id }}" {{ old('team_id', '') ? 'selected' : '' }}>{{ $team }}</option>
+                   @endforeach
+               </select>
+               @if($errors->has('team'))
+                   <div class="invalid-feedback">
+                        {{ $errors->first('team') }}                       
+                   </div>
+               @endif
+               <span class="help-block">{{ trans('cruds.indicateur.fields.team_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

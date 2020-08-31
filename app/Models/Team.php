@@ -29,9 +29,14 @@ class Team extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
-	
-	public function organisations()
-	{
-		return $this->belongsToMany(Organisation::class)->withTimestamps();
-	}
+
+    public function organisations()
+    {
+        return $this->belongsToMany(Organisation::class)->withTimestamps();
+    }
+
+    public function indicateurs()
+    {
+        return $this->hasMany(Indicateur::class, 'team_id');
+    }
 }

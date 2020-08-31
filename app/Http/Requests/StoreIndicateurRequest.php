@@ -28,6 +28,7 @@ class StoreIndicateurRequest extends FormRequest
             'description'     => [
                 'string',
                 'required',
+                'unique',
             ],
             'organisations.*' => [
                 'integer',

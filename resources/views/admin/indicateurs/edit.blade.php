@@ -76,6 +76,20 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.indicateur.fields.organisation_helper') }}</span>
             </div>
+
+            <div class="form-group">
+                <label class="required" for="team_id">Equipes</label>
+                <select class="form-control select2 {{ $errors->has('team_id') ? 'is-invalid' : '' }}" name="team_id" id="team_id" required >
+                    @foreach($teams as $id => $team)
+                        <option value="{{ $id }}" {{ $indicateur->team ? $indicateur->team->id : old('team_id' ) == $id ? 'selected' : '' }}>{{ $team }}</option> 
+                   @endforeach
+                </select>
+                @if($errors->has('team_id'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('team_id') }}
+                    </div>
+                @endif
+            </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

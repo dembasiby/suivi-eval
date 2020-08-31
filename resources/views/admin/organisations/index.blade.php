@@ -31,6 +31,7 @@
                         <th>
                             {{ trans('cruds.organisation.fields.sigle') }}
                         </th>
+                        <th>Equipes</th>
                         <th>
                             &nbsp;
                         </th>
@@ -50,6 +51,11 @@
                             </td>
                             <td>
                                 {{ $organisation->sigle ?? '' }}
+                            </td>
+                            <td>
+                              @foreach($organisation->teams as $id => $team)
+                                <span class="badge badge-info">{{ $team->name }}</span>
+                              @endforeach
                             </td>
                             <td>
                                 @can('organisation_show')

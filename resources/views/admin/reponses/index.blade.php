@@ -49,7 +49,7 @@
                                 {{ $reponse->id ?? '' }}
                             </td>
                             <td>
-                                {{ $reponse->description ?? '' }}
+                                {{ json_encode($reponse->description) ?? '' }}
                             </td>
                             <td>
                                 {{ $reponse->question->description ?? '' }}

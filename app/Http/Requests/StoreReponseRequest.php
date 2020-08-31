@@ -18,6 +18,19 @@ class StoreReponseRequest extends FormRequest
 
     public function rules()
     {
+         $data = [];
+        /* dd(request()->all()['reponses']); */
+        for ($i = 0; $i < count(request()->all()['reponses']); $i++) {
+
+            $prev = ($i > 0) ? ($i - 1) : 0;
+
+            $data[] = request()->validate([
+                'reponses.' . $i . '.questionnaire_id' => 'required',
+                'reponses.' . $i . '.question_id' => 'required',
+                'reponses.' . $i . '.description' => 'required_unless:reponses.' . $prev . '.description,non',
+                'reponses.' . $i . '.description.*' => 'required_unless:reponses.' . $prev . '.description,non',
+            ]);
+        }
         return [
              // 'description'      => [
 //                  'string',

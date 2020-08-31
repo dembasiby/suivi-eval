@@ -33,10 +33,10 @@ class Question extends Model
         'updated_at',
         'deleted_at',
         'team_id',
-		'options'
+        'options'
     ];
-	
-	protected $casts = [ 'options' => 'array' ];
+
+    protected $casts = ['options' => 'array'];
 
     protected function serializeDate(DateTimeInterface $date)
     {
@@ -52,19 +52,19 @@ class Question extends Model
     {
         return $this->belongsTo(Indicateur::class, 'indicateur_id');
     }
-	
-	public function questionnaires()
-	{
-		return $this->belongsToMany(Questionnaire::class);
-	}
+
+    public function questionnaires()
+    {
+        return $this->belongsToMany(Questionnaire::class);
+    }
 
     public function team()
     {
         return $this->belongsTo(Team::class, 'team_id');
     }
-    
+
     public function reponses()
     {
-    	 return $this->hasMany(Reponse::class, 'question_id');
+        return $this->hasMany(Reponse::class, 'question_id');
     }
 }

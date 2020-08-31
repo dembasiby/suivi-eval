@@ -5,9 +5,23 @@
     <div class="card-header">
 	{{ trans('global.show') }} {{ trans('cruds.questionnaire.title') }}
     </div>
+    <div class="">
+        <form action="{{ route("admin.questionnaires.updateStatus", [$questionnaire->id]) }}" method="post" accept-charset="utf-8">
+          @csrf 
+	  @method('patch')
+	  <div class="form-group">
+	      <select class="form-control" name="statut" id="statut" size="1">
+		  <option disabled selected value>-- Selectionner une option --</option>
+		  <option value="3">Valider le questionnaire</option>
+		  <option value="1">Retourner le questionnaire en mode draft</option>
+	      </select>
+	  </div>
+		<button class="btn btn-primary" type="submit">Mettre le statut à jour</button>
+       </form> 
+    </div>
 
     <div class="card-body">
-	<div class="form-group">
+	<div class="form-group" disabled>
 	    <div class="form-group">
 		<a class="btn btn-default" href="{{ route('admin.questionnaires.index') }}">
 		{{ trans('global.back_to_list') }}
@@ -111,7 +125,7 @@
 
 	<br>
 	@endfor
-	<button class="btn btn-primary" type="submit">Soumettre</button>
+	<button disabled class="btn btn-primary" type="submit">Soumettre</button>
 	</form>
 
 	<div class="form-group">

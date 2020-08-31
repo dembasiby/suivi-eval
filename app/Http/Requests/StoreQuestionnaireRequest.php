@@ -26,24 +26,24 @@ class StoreQuestionnaireRequest extends FormRequest
             'annee'           => [
                 'required',
                 'integer',
-                'min:-2147483648',
-                'max:2147483647',
+                'min:2020',
+                'max:2100',
             ],
             'trimestre'       => [
                 'string',
                 'required',
             ],
             // 'questions.*'     => [
-           //      'integer',
-           //  ],
-           //  'questions'       => [
-           //      'required',
-           //      'array',
-           //  ],
+            //      'integer',
+            //  ],
+            //  'questions'       => [
+            //      'required',
+            //      'array',
+            //  ],
             // 'organisation_id' => [
-     //            'required',
-     //            'integer',
-     //        ],
+            //            'required',
+            //            'integer',
+            //        ],
         ];
     }
 }
