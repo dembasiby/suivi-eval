@@ -26,6 +26,7 @@ class IndicateurTableSeeder extends Seeder
         $ind1 = Indicateur::create([
             'code_indicateur' => '1.1.1.1',
             'description' => 'Document signé par l\'autorité compétente ',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 1
         ]);
@@ -33,6 +34,7 @@ class IndicateurTableSeeder extends Seeder
         $ind2 = Indicateur::create([
             'code_indicateur' => '1.1.1.2',
             'description' => 'La proportion d’acteurs pertinents ayant effectivement reçu le document',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 1
         ]);
@@ -58,6 +60,7 @@ class IndicateurTableSeeder extends Seeder
         $ind3 = Indicateur::create([
             'code_indicateur' => '1.1.2.1',
             'description' => 'Un document de sensibilisation à l\'endroit des parties intéressées pertinentes disponible dans les trois (3) mois qui suivent l’adoption de la stratégie',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 2
         ]);
@@ -77,6 +80,7 @@ class IndicateurTableSeeder extends Seeder
         $ind4 = Indicateur::create([
             'code_indicateur' => '1.1.2.2',
             'description' => 'Taux de réalisation des sessions de sensibilisation programmées',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 2
         ]);
@@ -98,6 +102,7 @@ class IndicateurTableSeeder extends Seeder
         $ind5 = Indicateur::create([
             'code_indicateur' => '1.1.2.3',
             'description' => 'Le nombre de cibles sensibilisées',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 2
         ]);
@@ -131,6 +136,7 @@ class IndicateurTableSeeder extends Seeder
         $ind6 = Indicateur::create([
             'code_indicateur' => '1.2.1.1',
             'description' => 'Effectivité des plaidoyers auprès des autorités supranationales',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 3
         ]);
@@ -156,6 +162,7 @@ class IndicateurTableSeeder extends Seeder
         $ind7 = Indicateur::create([
             'code_indicateur' => '1.2.1.2',
             'description' => 'Nombre de textes pris',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 3
         ]);
@@ -180,6 +187,7 @@ class IndicateurTableSeeder extends Seeder
         $ind8 = Indicateur::create([
             'code_indicateur' => '1.2.2.1',
             'description' => 'La fréquence de la revue de l’état des conventions internationales pertinentes',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 4
         ]);
@@ -198,6 +206,7 @@ class IndicateurTableSeeder extends Seeder
         $ind9 = Indicateur::create([
             'code_indicateur' => '1.2.2.2',
             'description' => 'Taux de ratification des conventions internationales pertinentes',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 4
         ]);
@@ -227,6 +236,7 @@ class IndicateurTableSeeder extends Seeder
         $ind10 = Indicateur::create([
             'code_indicateur' => '1.2.3.1',
             'description' => 'Nombre de textes pris pour encadrer les constructions juridiques',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 5
         ]);
@@ -245,6 +255,7 @@ class IndicateurTableSeeder extends Seeder
         $ind11 = Indicateur::create([
             'code_indicateur' => '1.2.3.2',
             'description' => 'Des mécanismes d’identification des bénéficiaires effectifs PM et CJ élaborés dans les délais',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 5
         ]);
@@ -269,6 +280,7 @@ class IndicateurTableSeeder extends Seeder
         $ind12 = Indicateur::create([
             'code_indicateur' => '1.2.3.3',
             'description' => 'Un registre des bénéficiaires effectifs accessible via une plateforme centrale nationale mis en place dans les délais',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 5
         ]);
@@ -288,6 +300,7 @@ class IndicateurTableSeeder extends Seeder
         $ind13 = Indicateur::create([
             'code_indicateur' => '1.2.3.4',
             'description' => 'Un plaidoyer auprès de l’OHADA fait dans les délais',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 5
         ]);
@@ -312,6 +325,7 @@ class IndicateurTableSeeder extends Seeder
         $ind14 = Indicateur::create([
             'code_indicateur' => '1.2.4.1',
             'description' => 'Le Code pénal est modifié dans les délais pour incriminer de manière complète le financement du terrorisme',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 6
         ]);
@@ -331,6 +345,7 @@ class IndicateurTableSeeder extends Seeder
         $ind15 = Indicateur::create([
             'code_indicateur' => '1.2.5.1',
             'description' => 'Un Responsable de veille est désigné dans les délais et ses missions déclinées',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 7
         ]);
@@ -356,6 +371,7 @@ class IndicateurTableSeeder extends Seeder
         $ind16 = Indicateur::create([
             'code_indicateur' => '1.2.5.2',
             'description' => 'Nombre de notes d’alerte périodiques produites',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 7
         ]);
@@ -380,6 +396,7 @@ class IndicateurTableSeeder extends Seeder
         $ind17 = Indicateur::create([
             'code_indicateur' => '1.2.5.3',
             'description' => 'Nombre de rapports périodiques d’alerte produits',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 7
         ]);
@@ -404,6 +421,7 @@ class IndicateurTableSeeder extends Seeder
         $ind18 = Indicateur::create([
             'code_indicateur' => '1.3.1.1',
             'description' => 'Taux de réalisation du plan de travail du CCLBCFT',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 8
         ]);
@@ -441,6 +459,7 @@ class IndicateurTableSeeder extends Seeder
         $ind19 = Indicateur::create([
             'code_indicateur' => '1.3.1.2',
             'description' => 'Nombre de sessions de formation organisées pour les membres du CCLBCFT',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 8
         ]);
@@ -471,6 +490,7 @@ class IndicateurTableSeeder extends Seeder
         $ind20 = Indicateur::create([
             'code_indicateur' => '1.3.1.3',
             'description' => 'Taux de membres du CCLBCFT formés',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 8
         ]);
@@ -490,6 +510,7 @@ class IndicateurTableSeeder extends Seeder
         $ind21 = Indicateur::create([
             'code_indicateur' => '1.3.1.4',
             'description' => 'Nombre de réunions tenues par le CCLBCFT',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 8
         ]);
@@ -510,6 +531,7 @@ class IndicateurTableSeeder extends Seeder
         $ind22 = Indicateur::create([
             'code_indicateur' => '1.3.1.5',
             'description' => 'Taux de participation aux réunions du CCLBCFT ',
+            'team_id' => 1,
             /* 'frequence_collecte' => 4, */
             'extrant_id' => 8
         ]);
@@ -529,6 +551,7 @@ class IndicateurTableSeeder extends Seeder
         $ind23 = Indicateur::create([
             'code_indicateur' => '1.3.2.1',
             'description' => 'Nombre d’accords signés entre acteurs nationaux',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 9
         ]);
@@ -537,6 +560,7 @@ class IndicateurTableSeeder extends Seeder
         $ind24 = Indicateur::create([
             'code_indicateur' => '1.3.2.2',
             'description' => 'Taux d’opérationnalisation des accords signés ',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 9
         ]);
@@ -544,6 +568,7 @@ class IndicateurTableSeeder extends Seeder
         $ind25 = Indicateur::create([
             'code_indicateur' => '1.3.3.1',
             'description' => 'Systématicité de l’évaluation de la coordination',
+            'team_id' => 1,
             /* 'frequence_collecte' => 1, */
             'extrant_id' => 10
         ]);
@@ -553,7 +578,104 @@ class IndicateurTableSeeder extends Seeder
             'code_indicateur' => '1.3.3.2',
             'description' => 'Systématicité de l’évaluation de la coopération',
             /* 'frequence_collecte' => 1, */
+            'team_id' => 1,
             'extrant_id' => 10
         ]);
+
+
+        /***************************************************************************
+         * 
+         *           AXE STRATEGIQUE 2
+         * 
+         **************************************************************************/
+
+
+        // $txt = TypeQuestion::create(['type' => 'text']); // <input type='text'> 1
+        // $nb = TypeQuestion::create(['type' => 'number']); // <input type='number'> 2
+        // $check = TypeQuestion::create(['type' => 'checkbox']); // <input type="checkbox"> 3
+        // $radio = TypeQuestion::create(['type' => 'radio']); // <input type="radio"> 4
+        // $date = TypeQuestion::create(['type' => 'date']); // <input type="date"> 5
+        // $textarea = TypeQuestion::create(['type' => 'textarea']); // <textarea></textarea> 6
+        // $obj = TypeQuestion::create(['type' => 'object']); // tableau 7
+
+         $ind27 = Indicateur::create([
+            'code_indicateur' => '2.1.1.1',
+            'description' => 'Nombre de sessions de formation par catégorie d’assujettis (secteur financier et secteur non financier) tenues',
+            /* 'frequence_collecte' => 1, */
+            'extrant_id' => 11,
+            'team_id' => 2
+        ]);
+
+        Question::create([
+            'description' => "Des sessions de formation sur les techniques d’évaluation des risques ont-elles été tenues sur la période pour les assujettis ?",
+            'indicateur_id' => $ind27->id,
+            'type_question_id' => 4,
+            
+        ]);
+
+        Question::create([
+            'description' => "Si- oui, veuillez préciser à l’aide du tableau, le nombre de sessions prévues, réalises et le nombre de bénéficiaires ainsi que les dates",
+            'indicateur_id' => $ind27->id,
+            'type_question_id' => 7,
+            'options' => [
+                "Catégories d’assujettis",
+                "Nombre de sessions prévues",
+                "Nombres de sessions tenues",
+                "Nombres de bénéficiaires par sessions",
+                "Date de réalisation"
+            ],
+            'sub_options' => [
+                "Secteur financier",
+                "Secteur non-financier"    
+            ]
+        ]);
+
+        $ind28 = Indicateur::create([
+            'code_indicateur' => '2.1.1.2',
+            'description' => 'Nombre de cartographies sectorielles disponibles',
+            /* 'frequence_collecte' => 1, */
+            'extrant_id' => 11,
+            'team_id' => 2
+        ]);
+
+        Question::create([
+            'description' => "Des cartographies sectorielles sont-elles réalisées?",
+            'indicateur_id' => $ind28->id,
+            'type_question_id' => 4,
+            
+        ]);
+
+        Question::create([
+            'description' => "Si- oui, veuillez préciser à l’aide du tableau, les cartographies par nombre et secteur pertinent ainsi que les dates de mise à disposition",
+            'indicateur_id' => $ind28->id,
+            'type_question_id' => 7,
+            'options' => [
+                "Période",
+                "Nombre de secteurs pertinents identifiés",
+                "Nombre de cartographies réalisées",
+                "Date de mise à disposition"
+            ],
+        ]);
+
+        $ind29 = Indicateur::create([
+            'code_indicateur' => '2.1.2.1',
+            'description' => 'Taux de désignation des responsables de conformité dans les entités assujettis',
+            /* 'frequence_collecte' => 1, */
+            'extrant_id' => 12,
+            'team_id' => 2
+        ]);
+
+        Question::create([
+            'description' => "Veuillez préciser à l’aide du tableau, la proportion d’entités d’assujettis ayant désigné de façon formelle un responsable de conformité",
+            'indicateur_id' => $ind29->id,
+            'type_question_id' => 7,
+            'options' => [
+                "Période",
+                "Nombre d’entités obligées soumises à l’obligation de désignation d’un responsable",
+                "Nombre de responsables de conformité désignés",
+                "Nombre d’actes de désignation reçus par la CENTIF"
+            ],
+        ]);
+
     }
 }

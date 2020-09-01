@@ -79,9 +79,10 @@
 
             <div class="form-group">
                 <label class="required" for="team_id">Equipes</label>
+
                 <select class="form-control select2 {{ $errors->has('team_id') ? 'is-invalid' : '' }}" name="team_id" id="team_id" required >
                     @foreach($teams as $id => $team)
-                        <option value="{{ $id }}" {{ $indicateur->team ? $indicateur->team->id : old('team_id' ) == $id ? 'selected' : '' }}>{{ $team }}</option> 
+                        <option value="{{ $id }}" {{ ($indicateur->team_id ? $indicateur->team_id : old('team_id' )) == $id ? 'selected' : '' }}>{{ $team }}</option> 
                    @endforeach
                 </select>
                 @if($errors->has('team_id'))
